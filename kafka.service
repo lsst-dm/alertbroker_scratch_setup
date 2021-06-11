@@ -1,0 +1,16 @@
+[Unit]
+Description=Apache Kafka Broker
+ConditionPathExists=/opt/kafka/bin/kafka-server-start.sh
+Requires=zookeeper.service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+ExecStop=/opt/kafka/bin/kafka-server-stop.sh
+SyslogIdentifier=kafka
+LimitNOFILE=infinity
+Restart=on-failure
+
+[Install]
+WantedBy=multiuser.target

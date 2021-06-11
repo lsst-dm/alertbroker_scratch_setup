@@ -1,0 +1,13 @@
+[Unit]
+Description=Apache Zookeeper Server
+ConditionPathExists=/opt/kafka/bin/zookeeper-server-start.sh
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties
+ExecStop=/opt/kafka/bin/zookeeper-server-stop.sh
+SyslogIdentifier=zookeeper
+
+[Install]
+WantedBy=multiuser.target
