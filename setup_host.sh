@@ -2,16 +2,12 @@
 
 set -euo pipefail
 
-if [ -z ${1+x} ]; then
-    echo "usage: setup_host.sh IPADDRESS"
-    echo "	an IP address must be specified"
-    exit 1
-fi
-
-IP=$1
+HOST=alertbroker-scratch.lsst.codes
 
 echo "copying files up"
-rsync kafka.service zookeeper.service install_broker.sh $IP:/tmp/provision_scripts
+ssh $HOST 'mkdir -p /tmp/provision_scripts'
+rsync kafka.service zookeeper.service install_broker.sh $HOST:/tmp/provision_scripts
+rsync -r ./config $HOST:/tmp/provision_scripts
 
 echo "executing remote install"
-ssh $IP 'cd /tmp/provision_scripts && sudo ./install_broker.sh'
+ssh $HOST 'cd /tmp/provision_scripts && sudo ./install_broker.sh'

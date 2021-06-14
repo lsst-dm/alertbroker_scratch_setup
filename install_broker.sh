@@ -8,6 +8,8 @@ say_green() {
     printf "${GREEN}setup: $1\n${NO_COLOR}" 1>&2
 }
 
+say_green "setting hostname to alertbroker-scratch.lsst.codes"
+hostnamectl set-hostname alertbroker-scratch.lsst.codes
 
 say_green "installing Java"
 
