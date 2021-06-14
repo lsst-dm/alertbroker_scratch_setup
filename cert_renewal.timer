@@ -1,0 +1,9 @@
+[Unit]
+Description=Twice daily check for cert renewal
+
+[Timer]
+OnCalendar=*-*-* 06,18:09:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
