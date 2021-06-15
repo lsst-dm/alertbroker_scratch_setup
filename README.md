@@ -36,13 +36,13 @@ The general gist is:
     - A VM host to run the broker
     - A disk attached to the VM
     - SSH public key for accessing the VM
- 3. A DNS record was created by the SQueRE team, giving a name to the external
+ 3. A DNS record was created by the SQuaRE team, giving a name to the external
     IP address.
  4. Scripts and configs were copied onto the host with
-    (`./setup_host.sh`)[./setup_host.sh].
+    [`./setup_host.sh`](./setup_host.sh).
  5. Dependencies were installed, configs were copied into place, and systemd
     units were installed to run the broker. This is described in
-    (`./install_broker.sh`)[./install_broker.sh] - but in reality that script
+    [`./install_broker.sh`](./install_broker.sh) - but in reality that script
     was written after working on the host, so it may miss some commands that
     were done by hand.
 
