@@ -4,6 +4,24 @@ This repo documents how the Scratch Alert Broker (which runs at
 `alertbroker-scratch.lsst.codes`) is set up. This is not a "how-to" document -
 it's a "what I did" document.
 
+## Usage
+
+Beware that this is a temporary scratch broker for developing libraries and
+clients. It can disappear at any moment without warning, and has no redundancy!
+
+You can use the alertbroker with any Kafka client; it's accessible on the
+internet at `alertbroker-scratch.lsst.codes:9092`. It uses password-based auth;
+ask `swnelson@uw.edu` or `ecbellm@uw.edu` for the password.
+
+Here's an example `kafkacat` configuration file:
+
+```
+security.protocol=SASL_SSL
+sasl.mechanisms=SCRAM-SHA-256
+sasl.username=admin
+sasl.password=<REDACTED>
+```
+
 ## Overview
 
 The general gist is:
