@@ -15,34 +15,34 @@ say_green "setting hostname to alertbroker-scratch.lsst.codes"
 hostnamectl set-hostname $HOST
 
 
-# say_green "installing Java"
+say_green "installing Java"
 
-# apt update -y
-# apt install -y \
-#     openjdk-11-jre-headless
+apt update -y
+apt install -y \
+    openjdk-11-jre-headless
 
-# say_green "preparing /opt directories"
-# mkdir -p /opt
-# mkdir -p /opt/services
+say_green "preparing /opt directories"
+mkdir -p /opt
+mkdir -p /opt/services
 
-# say_green "downloading Kafka"
+say_green "downloading Kafka"
 
-# # Download and unpack kafka
-# curl --output /tmp/kafka.tar.gz \
-#      https://mirrors.ocf.berkeley.edu/apache/kafka/2.8.0/kafka_2.13-2.8.0.tgz
+# Download and unpack kafka
+curl --output /tmp/kafka.tar.gz \
+     https://mirrors.ocf.berkeley.edu/apache/kafka/2.8.0/kafka_2.13-2.8.0.tgz
 
-# say_green "unpacking Kafka"
+say_green "unpacking Kafka"
 
-# tar --directory /opt \
-#     --file /tmp/kafka.tar.gz \
-#     --extract \
-#     --preserve-permissions \
-#     --ungzip
+tar --directory /opt \
+    --file /tmp/kafka.tar.gz \
+    --extract \
+    --preserve-permissions \
+    --ungzip
 
-# ln -sf /opt/kafka_2.13-2.8.0 /opt/kafka
-# say_green "cleaning up Kafka download tarball"
+ln -sf /opt/kafka_2.13-2.8.0 /opt/kafka
+say_green "cleaning up Kafka download tarball"
 
-# rm /tmp/kafka.tar.gz
+rm /tmp/kafka.tar.gz
 
 say_green "setting up SSL certificate"
 say_green "installing LetsEncrypt Certbot"
