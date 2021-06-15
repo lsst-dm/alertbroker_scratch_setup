@@ -317,7 +317,13 @@ then ran this:
 The admin account also needed to be registered into Kafka explicitly in its
 configuration. I _think_ this has to do with interbroker communication, even
 though we only have one broker, but I don't really understand why this was
-necessary. Nevertheless, it's [in `server.properties`](./server.properties#L37-L39)
+necessary. Nevertheless, it's [in `server.properties`](./server.properties#L37-L39).
+
+To avoid checking it into source code, the password itself is redacted from
+`server.properties`, and instead there's a placeholder value,
+`__PASSWORD_PLACEHOLDER`. I ran a `sed `script to replace this placeholder
+string with the actual password (which is still in the bash interpreter's `PW`
+variable).
 
 ### Turn Kafka on
 
