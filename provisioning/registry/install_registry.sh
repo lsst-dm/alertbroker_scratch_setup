@@ -121,8 +121,7 @@ ln -s /etc/nginx/sites-available/registry.conf /etc/nginx/sites-enabled/registry
 say_green "creating admin user"
 printf 'admin:' > /etc/nginx/htpasswd
 say_green "  please enter admin password:"
-read -s ADMIN_PW
-printf "$ADMIN_PW\n" >> /etc/nginx/htpasswd
+openssl passwd -apr1 >> /etc/nginx/htpasswd
 
 ## Finally, inform nginx that its configuration is updated so it should reload.
 say_green "reloading nginx configuration"
