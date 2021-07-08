@@ -46,7 +46,7 @@ I provisioned a default host, an e2-medium (2vCPUs, 4GB memory). The Schema
 Registry is a lightweight application without many demands, so a small instance
 is fine.
 
-I gave it the name "`schema-registry-clean-install`". Originally therfe was
+I gave it the name "`schema-registry-clean-install`". Originally there was
 `schema-registry` while I was testing out provisioning, and then I made this
 "clean-install" instance to try running the provisioning script end-to-end.
 
