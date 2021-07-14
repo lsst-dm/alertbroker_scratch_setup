@@ -78,7 +78,7 @@ PASSWORD=supersecret
 curl \
   --request DELETE \
   --user "admin:$PASSWORD" \
-  "https://alertschemas-scratch.lsst.codes/subjects/${SCHEMA_SUBJECT}/versions"
+  "https://alertschemas-scratch.lsst.codes/subjects/${SCHEMA_SUBJECT}/versions/latest"
 ```
 
 ## How this was set up
