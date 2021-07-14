@@ -66,7 +66,7 @@ PASSWORD=supersecret
 curl \
   --request POST \
   --header "Content-Type: application/vnd.schemaregistry.v1+json" \
-  --data '{"schema": "{"type": "string"}"}' \
+  --data '{"schema": "{\"type\": \"string\"}"}' \
   --user "admin:$PASSWORD" \
   "https://alertschemas-scratch.lsst.codes/subjects/${SCHEMA_SUBJECT}/versions"
 ```
